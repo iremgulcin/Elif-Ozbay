@@ -1,33 +1,31 @@
 ---
 # MODEL CARD
 
-# Model Card for {{ model_id | default("Model ID", true) }}
+# Model Card for Autism Emotion Detection Model
 
-<!-- Provide a quick summary of what the model is/does. -->
-
-{{ model_summary | default("Bu model, otizm spektrum bozukluğu teşhisi konmuş bireyler için duygu analizi yapmak amacıyla geliştirilmiştir.", true) }}
+Bu model, otizm spektrum bozukluğu tanısı konmuş bireylerin duygusal ifadelerini anlamalarına yardımcı olmak için geliştirilmiştir. Model, Fer2013 veri seti üzerinde eğitilmiş ve otizm spektrum bozukluğu tanısı konmuş bireylerin diğer insanların duygusal ifadelerini anlamalarını kolaylaştırmak amacıyla kullanılabilir.
 
 ## Model Details
 
 ### Model Description
 
-<!-- Provide a longer summary of what this model is. -->
+Bu model, derin öğrenme tekniklerini kullanarak duygusal ifadeleri tanımak ve yorumlamak için eğitilmiştir. Otizm spektrum bozukluğu tanısı konmuş bireylerin duygusal ifadeleri anlamalarına yardımcı olmak için tasarlanmıştır.
 
 {{ model_description | default("", true) }}
 
-- **Developed by:** {{ developers | default("[More Information Needed]", true)}}
-- **Model date:** {{ model_date | default("[More Information Needed]", true)}}
-- **Model type:** {{ model_type | default("[More Information Needed]", true)}}
-- **Language(s):** {{ language | default("[More Information Needed]", true)}}
+- **Developed by:** Elif Özbay
+- **Model date:** 
+- **Model type:** Derin Öğrenme (Convolutional Neural Network)
+- **Language(s):** Python
 - **Finetuned from model [optional]:** {{ base_model | default("[More Information Needed]", true)}}
 
 ### Model Sources [optional]
 
 <!-- Provide the basic links for the model. -->
 
-- **Repository:** {{ repo | default("[More Information Needed]", true)}}
-- **Paper [optional]:** {{ paper | default("[More Information Needed]", true)}}
-- **Demo [optional]:** {{ demo | default("[More Information Needed]", true)}}
+- **Repository:** https://github.com/iremgulcin/Elif-Ozbay/tree/master
+- **Paper [optional]:** 
+- **Demo [optional]:** 
 
 ## Uses
 
@@ -39,35 +37,24 @@
 
 {{ direct_use | default("[More Information Needed]", true)}}
 
-### Downstream Use [optional]
-
-<!-- This section is for the model use when fine-tuned for a task, or when plugged into a larger ecosystem/app -->
-
-{{ downstream_use | default("[More Information Needed]", true)}}
 
 ### Out-of-Scope Use
 
-<!-- This section addresses misuse, malicious use, and uses that the model will not work well for. -->
-
-{{ out_of_scope_use | default("[More Information Needed]", true)}}
+Bu model, genel duygu tanıma veya teşhisler için kullanılmak üzere tasarlanmamıştır.
 
 ## Bias, Risks, and Limitations
 
-<!-- This section is meant to convey both technical and sociotechnical limitations. -->
-
-{{ bias_risks_limitations | default("[More Information Needed]", true)}}
+Bu modelin doğruluğu %55 civarındadır, bu nedenle her zaman doğru tahminler yapmayabilir. Ayrıca, modelin iğrenmiş duygusunu tahmin etme yeteneği sınırlı olabilir ve korku ile şaşkınlığı karıştırabilir.
 
 ### Recommendations
 
-<!-- This section is meant to convey recommendations with respect to the bias, risk, and technical limitations. -->
-
-{{ bias_recommendations | default("Users (both direct and downstream) should be made aware of the risks, biases and limitations of the model. More information needed for further recommendations.", true)}}
+Kullanıcılar (hem doğrudan hem de downstream) modelin risklerini, önyargılarını ve sınırlamalarını bilinçli bir şekilde anlamalıdır. Modelin kullanımı sırasında dikkatli olunmalı ve sonuçların profesyonel bir danışmandan alınan tavsiyelerle yorumlanması önerilir.
 
 ## How to Get Started with the Model
 
-Use the code below to get started with the model.
+Modeli kullanmaya başlamak için aşağıdaki kodu kullanabilirsiniz:
 
-{{ get_started_code | default("[More Information Needed]", true)}}
+python main.py
 
 ## Training Details
 
@@ -75,11 +62,12 @@ Use the code below to get started with the model.
 
 <!-- This should link to a Dataset Card, perhaps with a short stub of information on what the training data is all about as well as documentation related to data pre-processing or additional filtering. -->
 
-{{ training_data | default("[More Information Needed]", true)}}
+Model, Fer2013 veri seti üzerinde eğitilmiştir. Bu veri seti, çeşitli duygusal ifadeler içeren yüz ifadelerini içermektedir.
 
 ### Training Procedure
 
 <!-- This relates heavily to the Technical Specifications. Content here should link to that section when it is relevant to the training procedure. -->
+Model, evrişimli sinir ağı (CNN) mimarisi kullanılarak eğitilmiştir. Eğitim sürecinde, veri seti ön işleme adımlarından geçirilmiş ve belirli hiperparametreler kullanılarak model eğitilmiştir.
 
 #### Preprocessing [optional]
 
@@ -104,9 +92,7 @@ Use the code below to get started with the model.
 
 #### Testing Data
 
-<!-- This should link to a Dataset Card if possible. -->
-
-{{ testing_data | default("[More Information Needed]", true)}}
+Test verisi, Fer2013 veri seti üzerinde ayrılmış bir test setinden seçilmiştir.
 
 #### Factors
 
@@ -116,9 +102,7 @@ Use the code below to get started with the model.
 
 #### Metrics
 
-<!-- These are the evaluation metrics being used, ideally with a description of why. Decision tresholds, model performance measures -->
-
-{{ testing_metrics | default("[More Information Needed]", true)}}
+Modelin performansı, doğruluk (accuracy) ve kayıp (loss) metrikleri kullanılarak değerlendirilmiştir.
 
 ### Results
 
@@ -153,20 +137,7 @@ Use the code below to get started with the model.
 
 {{ software | default("[More Information Needed]", true)}}
 
-## Citation [optional]
 
-<!-- If there is a paper or blog post introducing the model, the APA and Bibtex information for that should go in this section. -->
-
-
-## Glossary [optional]
-
-<!-- If relevant, include terms and calculations in this section that can help readers understand the model or model card. -->
-
-{{ glossary | default("[More Information Needed]", true)}}
-
-## More Information [optional]
-
-{{ more_information | default("[More Information Needed]", true)}}
 
 
 
