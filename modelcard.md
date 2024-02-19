@@ -5,7 +5,7 @@
 
 <!-- Provide a quick summary of what the model is/does. -->
 
-{{ model_summary | default("", true) }}
+{{ model_summary | default("Bu model, otizm spektrum bozukluğu teşhisi konmuş bireyler için duygu analizi yapmak amacıyla geliştirilmiştir.", true) }}
 
 ## Model Details
 
