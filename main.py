@@ -16,9 +16,11 @@ emotion_labels = ['Kizgin', 'Igrenme', 'Korku', 'Mutlu', 'Normal', 'Uzgun', 'Sas
 cap = cv2.VideoCapture(0)
 
 while True:
+
     _, frame = cap.read()
     frame = cv2.flip(frame, 1)  # Görüntüyü yatay olarak ters çevirme
     labels = []
+    
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     faces = face_classifier.detectMultiScale(gray)
 
